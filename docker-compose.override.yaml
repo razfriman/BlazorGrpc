@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=${ASPNETCORE_URLS}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ASPNETCORE_KESTREL_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${ASPNETCORE_KESTREL_CERTIFICATE_PATH}
+      - ApiUrl=https://${BLAZORGRPC_EXTERNAL_DNS_NAME_OR_IP}:5202
+    volumes:
+      - ${CERTIFICATE_PATH}:${ASPNETCORE_KESTREL_CERTIFICATE_PATH}:ro
+    ports:
+      - "5101:80"
+      - "5201:443"
+  api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=${ASPNETCORE_URLS}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ASPNETCORE_KESTREL_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${ASPNETCORE_KESTREL_CERTIFICATE_PATH}
+      - WeatherUrl=${WEATHER_URL}
+    volumes:
+      - ${CERTIFICATE_PATH}:${ASPNETCORE_KESTREL_CERTIFICATE_PATH}:ro
+    ports:
+      - "5102:80"
+      - "5202:443"
+  weather:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=${ASPNETCORE_URLS}
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=${ASPNETCORE_KESTREL_CERTIFICATE_PASSWORD}
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=${ASPNETCORE_KESTREL_CERTIFICATE_PATH}
+    volumes:
+      - ${CERTIFICATE_PATH}:${ASPNETCORE_KESTREL_CERTIFICATE_PATH}:ro
+    ports:
+      - "5103:80"
+      - "5203:443"

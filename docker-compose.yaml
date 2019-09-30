@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  web:
+    image: ${REGISTRY:-blazorgrpc}/web:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: BlazorGrpc.Web.Server/Dockerfile
+  api:
+    image: ${REGISTRY:-blazorgrpc}/api:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: BlazorGrpc.Api/Dockerfile
+  weather:
+    image: ${REGISTRY:-blazorgrpc}/weather:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: BlazorGrpc.WeatherService/Dockerfile

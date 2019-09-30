@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "BlazorGrpc.Protos";
+
+package Weather;
+
+service WeatherService {
+  rpc GetWeather (GetWeatherRequest) returns (GetWeatherResponse);
+}
+
+message GetWeatherRequest {
+  string zip_code = 1;
+}
+
+message GetWeatherResponse {
+  repeated Weather weathers = 1;
+}
+
+message Weather {
+  int32 temperature_c = 1;
+  int32 temperature_f = 2;
+  string date = 3;
+  string summary = 4;
+}

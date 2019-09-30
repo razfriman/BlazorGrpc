@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Protobuf Include="..\BlazorGrpc.Protos\Protos\weather.proto" GrpcServices="Client">
+      <Link>Protos\weather.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.10.0-rc1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.23.2" />
+    <PackageReference Include="Grpc.Tools" Version="2.24.0" PrivateAssets="All" />
+    <PackageReference Include="Grpc.AspNetCore.Server.ClientFactory" Version="2.23.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc3" />
+  </ItemGroup>
+  
+</Project>
