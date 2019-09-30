@@ -83,3 +83,7 @@ api_1      | info: BlazorGrpc.Api.Controllers.WeatherServiceController[0]       
 
 weather_1  | info: BlazorGrpc.WeatherService.Services.WeatherService[0]                      weather_1  |       [gRPC Weather Service] [GetWeather] [12c15315-4723c328bfbb8586]     
 ```
+
+## Screenshot
+
+![screenshot](https://user-images.githubusercontent.com/1769935/65869246-6a1b2a00-e3bd-11e9-9f6c-600cb57dd20d.PNG)
