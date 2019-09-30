@@ -1,5 +1,7 @@
 # Blazor WebAssembly + ASP.NET Core + gRPC
 
+[![GitHub Actions status](https://github.com/razfriman/BlazorGrpc/workflows/C%23%20.NET%20Core%20CI/badge.svg)](https://github.com/razfriman/BlazorGrpc/actions)
+
 This sample projects demonstrates how you can use the power of Blazor, ASP.NET Core, and gRPC to create a web application which can communicate with a backend that uses gRPC with maximum code reusability.
 
 By simply defining our API contracts once via `.proto` files, the request/response objects are created for both the backend and frontend (Blazor). Additionally, code-generation creates the gRPC clients and gRPC servers we need to implement the services.
