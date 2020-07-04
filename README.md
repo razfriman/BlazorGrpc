@@ -1,3 +1,7 @@
+UPDATE: This project is archived because this functionality has been built in directly thanks to `grpc-web`
+
+---
+
 # Blazor WebAssembly + ASP.NET Core + gRPC
 
 [![GitHub Actions status](https://github.com/razfriman/BlazorGrpc/workflows/C%23%20.NET%20Core%20CI/badge.svg)](https://github.com/razfriman/BlazorGrpc/actions)
